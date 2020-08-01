@@ -4,8 +4,72 @@
 <head>
   <meta charset="utf-8" />
   <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
-  <link rel="stylesheet" href="project/styles.css" />
-  <title>Vue Todo</title>
+  <style>
+  body {
+      font-family: 'Arvo';
+      font-size: 16px;
+      padding: 20px 100px 0px 100px;
+      background: #f3f3f3;
+  }
+
+  /* List */
+
+  ul {
+      list-style: none;
+  }
+
+  li {
+      background: #fff;
+      width: 500px;
+      min-height: 30px;
+      padding: 10px;
+      margin-bottom: 10px;
+      font-size: 1em;
+      display: flex;
+      align-items: center;
+  }
+
+  .delete {
+      display: none;
+      margin-left: auto;
+  }
+
+  li:hover .delete {
+      display: block;
+  }
+
+  label {
+      width: 400px;
+  }
+
+  .completed {
+      text-decoration: line-through;
+  }
+
+  /* Form */
+
+  input[type=checkbox] {
+      transform: scale(1.5);
+      margin-right: 10px;
+  }
+
+  input[type=text] {
+      font-size: 1em;
+  }
+
+  button {
+      font-family: 'Arvo';
+      font-size: 1em;
+  }
+
+  /* Controls */
+
+  .controls {
+      margin-top: 20px;
+  }
+
+  </style>
+  <title>Todo List</title>
 </head>
 
 <body>
@@ -31,7 +95,72 @@
     </ul>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  <script src="project/script.js"></script>
+  <script>
+  var app = new Vue({
+    el: '#app',
+    data: {
+      todos: [{
+        text: "Add your to do list!",
+        completed: false,
+      }],
+      message: '',
+      show: 'all',
+      drag: {},
+    },
+    computed: {
+      activeTodos() {
+        return this.todos.filter(item => {
+          return !item.completed;
+        });
+      },
+      filteredTodos() {
+        if (this.show === 'active')
+          return this.todos.filter(item => {
+           return !item.completed;
+          });
+        if (this.show === 'completed')
+          return this.todos.filter(item => {
+            return item.completed;
+           });
+        return this.todos;
+      },
+    },
+    methods:{
+      addItem() {
+        this.todos.push({text: this.message, completed: false});
+        this.message = '';
+      },
+      deleteItem(item) {
+        var index = this.todos.indexOf(item);
+        if (index > -1)
+          this.todos.splice(index,1);
+      },
+      showAll() {
+        this.show = 'all';
+      },
+      showActive() {
+        this.show = 'active';
+      },
+      showCompleted() {
+        this.show = 'completed';
+      },
+      deleteCompleted() {
+        this.todos = this.todos.filter(item => {
+          return !item.completed;
+        });
+      },
+      dragItem(item) {
+        this.drag = item;
+      },
+      dropItem(item) {
+        const indexItem = this.todos.indexOf(this.drag);
+        const indexTarget = this.todos.indexOf(item);
+        this.todos.splice(indexItem,1);
+        this.todos.splice(indexTarget,0,this.drag);
+      },
+    }
+  });
+  </script>
 </body>
 
 </html>
