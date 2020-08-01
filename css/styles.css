@@ -1,0 +1,187 @@
+html{
+  scroll-behavior: smooth;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+#titleMe, #aboutMe, #education, #skills, #work, #project{
+  padding-left: 10%;
+}
+
+#titleMe{
+  padding-left: 10%;
+  padding-top: 15%;
+}
+
+#education{
+  font-size: 30px;
+}
+
+/*navigation bar*/
+.navbar{
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.subtitle{
+  font-size: 40px;
+}
+
+.title {
+  text-align: left;
+  margin: 0px;
+  padding-top: 0px;
+  font-size: 25px;
+}
+.name{
+  font-size: 80px;
+}
+.intro{
+  font-size: 40px;
+}
+/*about me*/
+.imageText{
+  justify-content: flex-start;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+
+}
+.introMe{
+  padding-top: 0px;
+  float: left;
+  width: 40%;
+  padding: 1%;
+  height: 50%;
+  font-size: 15px;
+}
+.introText{
+  font-size: 20px;
+  padding-right: 10px;
+}
+
+
+img{
+  margin-left: auto;
+  width: 100%;
+  margin-top: auto;
+  float: right;
+}
+#image{
+  display: inline-block;
+  float: right;
+}
+.social-media-list {
+    list-style: none;
+}
+.social-media-list li {
+    display: inline-block;
+    margin-right: 1em;
+    font-size: 300%;
+}
+.social-media-list li a {
+    color: #888;
+    transition: color 0.5s;
+}
+.logo-facebook:hover {
+    color: #3b5998
+}
+
+/*Education*/
+.education{
+  font-size: 25px;
+}
+.paragraph{
+  font-size: 20px;
+  line-height: 0;
+}
+.minor{
+  font-size: 15px;
+}
+
+
+/*Skills*/
+.code{
+  font-size: 20px;
+}
+.li{
+  list-style-image: url("https://img.icons8.com/android/24/000000/forward.png");
+}
+.tools{
+  font-size: 20px;
+}
+.relevantCourse{
+  font-size: 20px;
+}
+.other{
+  font-size: 20px;
+}
+
+/*------> create column*/
+* {
+  box-sizing: border-box;
+}
+
+.column{
+  float: left;
+  width: 33.33%;
+  padding: 1%;
+  /* padding-left: 5%; */
+  height: 70%;
+  font-size: 15px;
+}
+
+.row{
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/*Work Experience*/
+.workDetail{
+  font-size: 15px;
+}
+.lists{
+  box-sizing: border-box;
+  margin-right: 20%;
+}
+
+
+/*Footer*/
+.footer{
+  text-align: center;
+
+}
+
+/* Phone Styles */
+@media only screen and (max-width: 400px) {
+
+}
+
+/* Tablet Styles */
+@media only screen and (min-width: 401px) and (max-width: 960px) {
+  .sign-up,
+    .feature-1,
+    .feature-2,
+    .feature-3 {
+      width: 50%;
+    }
+}
+
+Desktop Styles
+@media only screen and (min-width: 961px) {
+  .page {
+      width: 960px;
+      margin: 0 auto;
+    }
+    .feature-1,
+    .feature-2,
+    .feature-3 {
+      width: 33.3%;
+    }
+    .header {
+      height: 400px;
+    }
+}
