@@ -103,6 +103,12 @@ img{
 
 
 /*Skills*/
+.fa,.fa-angle-right{
+  padding-right: 10px;
+}
+.fa .fa-square{
+  
+}
 .code{
   font-size: 20px;
 }
