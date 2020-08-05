@@ -107,7 +107,7 @@ img{
   padding-right: 10px;
 }
 .fa .fa-square{
-  
+
 }
 .code{
   font-size: 20px;
@@ -154,6 +154,35 @@ img{
   margin-right: 20%;
 }
 
+/*projects*/
+.progress{
+  font-size: 10px;
+}
+.container{
+  display: grid;
+  grid-template: auto auto auto auto auto / 1fr 1fr 1fr;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+}
+.card:hover {
+  transform: scale(1.05);
+}
+.images img{
+  width: 100%;
+  object-fit: contain;
+  padding: 20px;
+}
+.content{
+  text-align: center;
+  padding: 10px;
+}
+.contentTitle{
+  font-size: 25px;
+}
+.contentP{
+  text-align:left;
+  padding: 20px 10px;
+}
 
 /*Footer*/
 .footer{
